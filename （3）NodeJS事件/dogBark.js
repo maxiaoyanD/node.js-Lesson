@@ -27,24 +27,30 @@
 // })
 
 var dogBark = require("./dog.js");
-console.log(dogBark);//得到一个dog构造函数
+// console.log(dogBark);//得到一个dog构造函数
 function barkFun(){
     console.log(this.dogName + " barked energy:" + this.energy);
 }
 
 var taiDi = new dogBark("taiDi",5);
 taiDi.on("bark",barkFun);
-
+var zangao = new dogBark("zangao",3);
+zangao.on("bark",barkFun);
 var intervalId = setInterval(function(){
     if(taiDi.energy>=0){
         taiDi.emit("bark");
-    }else{(intervalId);
+    }else{
+        clearInterval(intervalId);
     }
-    taiDi.energy -- ;
-        clearInterval
+    taiDi.energy -- ;  
 },1000);
-taiDi.emit("bark");
-// zangao.on("bark",function(){
-//     console.log(this.dogName + " barked energy:" + this.energy);
-// })
+var intervalId1 = setInterval(function(){
+    if(zangao.energy>=0){
+        zangao.emit("bark");
+    }else{
+        clearInterval(intervalId1);
+    }
+    zangao.energy -- ;  
+},1000);
+
 
