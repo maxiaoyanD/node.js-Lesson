@@ -43,7 +43,7 @@
         str += liNode;
     }
     str = str + "</ul>";
-    console.log(str1);
+    console.log(str);//ReferencrError 引用错误 str1 not defined
     res.writeHead(200, {"Content-Type": "text/html"});
     res.write(str);
     res.end();
