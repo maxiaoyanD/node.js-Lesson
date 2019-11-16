@@ -60,8 +60,11 @@
     </style>
 </head>
 <body>
+    <!-- 如果提交的表单包含二进制数据，例如上传文件
+        需要添加 enctype="multipart/form-data" 
+    -->
     <form method="post" enctype="multipart/form-data" action="/upload">
-        
+        <!-- post请求不会将数据显示到地址栏，get会 -->
         <div class="placeholder">
             <div class="filename"></div>
             <div class="webuploader-pick">
@@ -70,6 +73,7 @@
             </div>
             &nbsp;&nbsp;
             <div class="webuploader-pick">
+                <!-- type是submit的按钮点击时才会触发表单的提交，将表单的数据发送到服务端 -->
                 <input type="submit" value="提交">
                 提交
             </div>
